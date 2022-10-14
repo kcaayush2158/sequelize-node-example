@@ -35,8 +35,9 @@ exports.findAll = (req, res) => {
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
-    const id = req.body.id;
+    const id = req.params.id;
     Tutorial.findByPk(id).then((data) => {
+        console.log(data);
         if (data) {
             res.send(data);
         } else {
